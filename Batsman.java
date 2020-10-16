@@ -14,12 +14,15 @@ public class Batsman {
 		Random random = new Random();
 		if(type == BatsmanType.NORMAL) {
 			return random.nextInt(7);
-		} else{
+		} else if(type == BatsmanType.HITMAN){
 			List<Integer> list = new ArrayList<>(); 
 			list.add(0);
 			list.add(4);
 			list.add(6);
 			return list.get(random.nextInt(list.size()));
+		}
+		else {
+			return random.nextInt(4);
 		}
 	}
 

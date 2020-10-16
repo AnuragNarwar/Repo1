@@ -14,7 +14,7 @@ public class Match {
 		int totalScore=0;
 		
 		for(int i=0; i<overs*6; i++) {
-			int runscored = Scorer.playBall(starc, sehwag); // proper method name
+			int runscored = Scorer.scoreThePlayBall(starc, sehwag);
 			if(runscored==10){
 				System.exit(0);
 			}
@@ -38,7 +38,7 @@ public class Match {
 	}
 	public static String getBatsmanType() {
 		Scanner obj = new Scanner(System.in);
-		System.out.println("Enter the Batsman Type as : HITMAN or NORMAL");
+		System.out.println("Enter the Batsman Type as : HITMAN, NORMAL or DEFENSIVE");
 		return obj.nextLine();
 	}
 	public static int getOverNumber() {

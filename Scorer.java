@@ -2,7 +2,7 @@ package com.anurag.cricket1;
 
 public class Scorer {
 
-	public static int playBall(Bowler bl, Batsman bm) {
+	public static int scoreThePlayBall(Bowler bl, Batsman bm) {
 		int bmscore = bm.bat();
 		int blscore = bl.bowl();
 		System.out.println("Batsman : " + bmscore);
