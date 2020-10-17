@@ -39,7 +39,7 @@ public class Match {
 	}
 	public static String getBatsmanType() {
 		Scanner obj = new Scanner(System.in);
-		System.out.println("Enter the Batsman Type as : HITMAN, NORMAL or DEFENSIVE");
+		System.out.println("Enter the Batsman Type as : HITMAN, NORMAL, DEFENSIVE or TAILENDER");
 		return obj.nextLine();
 	}
 	public static String getBowlerType() {

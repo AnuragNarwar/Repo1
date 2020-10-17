@@ -5,10 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Batsman {
-	int runs=0;
-	int ballsPlayed=0;
-	boolean out;
-	BatsmanType type;
+	private int runs=0;
+	private int ballsPlayed=0;
+	private BatsmanType type;
 	
 	public int bat() {
 		Random random = new Random();

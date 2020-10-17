@@ -7,15 +7,24 @@ public class Umpire {
 		int blscore = bl.bowl();
 		System.out.println("Batsman : " + bmscore);
 		System.out.println("Bowler : " + blscore);
-		if(bmscore == blscore) {
-			if(bl.getType()==BowlerType.PARTTIME) {
-				return 0;
-			}else {
-				System.out.println("Batsman Lost by getting out");
-				return 10;
-			} 
+		if(bm.getType()==BatsmanType.TAILENDER) {
+			if(bmscore%2==blscore%2) {
+				return runScored(bl);
+			}
+		}else {
+			if(bmscore == blscore) {
+				return runScored(bl);
+			}
 		}
 		return bmscore;
+	}
+	private static int runScored(Bowler bl) {
+		if(bl.getType()==BowlerType.PARTTIME) {
+			return 0;
+		}else {
+			System.out.println("Batsman Lost by getting out");
+			return 10;
+		} 
 	}
 	
 }

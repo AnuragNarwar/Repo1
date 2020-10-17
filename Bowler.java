@@ -3,7 +3,7 @@ package com.anurag.cricket1;
 import java.util.Random;
 
 public class Bowler {
-	BowlerType type;
+	private BowlerType type;
 	
 	Bowler(BowlerType type){
 		this.type = type;
