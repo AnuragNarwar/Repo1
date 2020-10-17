@@ -8,26 +8,27 @@ public class Match {
 
 		int target = getTarget();
 		int overs = getOverNumber();
-		String bType = getBatsmanType();
-		Batsman sehwag = new Batsman(BatsmanType.valueOf(bType));
-		Bowler starc = new Bowler();
+		String batsmanType = getBatsmanType();
+		String bowlerType = getBowlerType();
+		Batsman sehwag = new Batsman(BatsmanType.valueOf(batsmanType));
+		Bowler starc = new Bowler(BowlerType.valueOf(bowlerType));
 		int totalScore=0;
 		
 		for(int i=0; i<overs*6; i++) {
-			int runscored = Scorer.scoreThePlayBall(starc, sehwag);
+			int runscored = Umpire.scoreThePlayBall(starc, sehwag);
 			if(runscored==10){
 				System.exit(0);
 			}
 			else {
 				totalScore+=runscored;
-					if(totalScore>=target) {
-						System.out.println("Batsman has Won");
-						System.exit(0);
-					}
+				if(totalScore>=target) {
+					System.out.println("Batsman has Won");
+					System.exit(0);
+				}
 			}
 			
 		}
-			System.out.println("Batsman has Lost");
+		System.out.println("Batsman has Lost");
 		
 		
 	}
@@ -39,6 +40,11 @@ public class Match {
 	public static String getBatsmanType() {
 		Scanner obj = new Scanner(System.in);
 		System.out.println("Enter the Batsman Type as : HITMAN, NORMAL or DEFENSIVE");
+		return obj.nextLine();
+	}
+	public static String getBowlerType() {
+		Scanner obj = new Scanner(System.in);
+		System.out.println("Enter the Bowler Type as : REGULAR or PARTTIME");
 		return obj.nextLine();
 	}
 	public static int getOverNumber() {
